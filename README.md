@@ -4,7 +4,7 @@
 ###### Pairvino
 
 ### Project Description
-###### This app allows users to input a food or dish and it'll output 
+###### This app allows users to input a food or dish and it'll output a recommended wine pairing
 
 
 ### API
