@@ -1,2 +1,2 @@
 # Pairvino
-A wine and good pairing application
+A wine and food pairing application
