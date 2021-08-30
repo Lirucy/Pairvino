@@ -1,25 +1,25 @@
 # Project Overview
 ### Project Name
 
-###### Pairvino
+##### Pairvino
 
 ### Project Description
-###### This app allows users to input a food or dish and it'll output a recommended wine pairing
+##### This app allows users to input a food or dish and it'll output a recommended wine pairing
 
 
 ### API
 
-###### The API I'm using is Spoonacular. The API that I'm working off of will take in a type of food or dish and return a recommneded wine pairing along with a short description and wine image.
+##### The API I'm using is Spoonacular. The API that I'm working off of will take in a type of food or dish and return a recommneded wine pairing along with a short description and wine image.
 
 
 ### API Snippet
 
-###### URL: https://api.spoonacular.com/food/wine/pairing?apiKey=0f106abf85fb4610af9663136788962f&food=steak
+##### URL: https://api.spoonacular.com/food/wine/pairing?apiKey=0f106abf85fb4610af9663136788962f&food=steak
 ![insomnia-snippet](https://user-images.githubusercontent.com/70818713/131391115-ae8dd6e5-9b99-4ed7-b941-bdb471047fe1.png)
 
 
 ### Wireframes
-![Pairvino wireframe](https://user-images.githubusercontent.com/70818713/131390948-86139f20-088b-4cd4-b195-4fe780573306.png)
+![Pairvino wireframe (1)](https://user-images.githubusercontent.com/70818713/131407339-a8b59611-6e09-4be6-94cd-dcf71f1bc982.png)
 ![Pairvino wireframe responsive](https://user-images.githubusercontent.com/70818713/131390993-0bd998c8-eb83-4533-bc4d-a57e3d843a4e.png)
 
 ### MVP
@@ -44,7 +44,7 @@
 | Sep 3  | Presentations                                |              |
 
 ## Priority Matrix
-![Priority Matrix](https://user-images.githubusercontent.com/70818713/131391162-f0ae5af8-8c4e-4fdc-b26b-bdaa95201eef.png)
+![Priority Matrix](https://user-images.githubusercontent.com/70818713/131407382-70c144cc-4451-4c6a-b6c3-687a07929087.png)
 
 ## Timeframes
 
