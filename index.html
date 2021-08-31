@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pairvino</title>
+</head>
+<body>
+  <h1>Pairvino</h1>
+  <h3>Have a certain food or dish in mind, and want to find out a wine that might pair well?<br>...then you've come to the right spot!</h3>
+  <div> 
+    <form id='dish-form'>
+      <input
+        type='text'
+        name='dish'
+        placeholder='Enter your food or dish'
+        id='wine-search'
+      />
+      <input
+        type='submit'
+        placeholder='Get wine pairing'
+        id='wine-pairing'
+      />
+    </form>
+  </div>
+  <div id='wine-data'>
+  </div>
+  <div id='wine-image'>
+  </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
