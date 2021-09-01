@@ -20,7 +20,13 @@
       <h1 id="pairvino">Pairvino</h1>
       <h3 id="resource">...your food and wine pairing resource!</h3>
       <form id="email-form">
-        <input type="text" name="email" placeholder="Email" id="email-entry" />
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          id="email-entry"
+          required
+        />
         <input type="submit" placeholder="Submit email" id="submission" />
       </form>
     </header>
@@ -38,6 +44,7 @@
             name="dish"
             placeholder="Enter food or dish"
             id="wine-search"
+            required
           />
           <input type="submit" placeholder="Get wine pairing" id="get-wine" />
         </form>

@@ -160,7 +160,8 @@ const fetchFoodData = async (wineParam) => {
     const foodCallUrl = `https://api.spoonacular.com/food/wine/dishes?apiKey=0f106abf85fb4610af9663136788962f&wine=${wineParam}`;
 
     const foodResponse = await axios.get(foodCallUrl);
-    const foodPairDescript = foodResponse.data.text;
+    const foodPairDescript =
+      foodResponse.data.text || foodResponse.data.message;
     renderFoodData(foodPairDescript);
   } catch (error) {
     console.error(error);
@@ -187,7 +188,7 @@ const renderFoodData = (foodPairDescript) => {
 const wineChoiceHandler = (event) => {
   event.preventDefault();
   const foodData = document.querySelector("#food-data");
-  const input = document.querySelector("option");
+  const input = document.querySelector("select");
   foodData.innerHTML = "";
   fetchFoodData(input.value);
 };
