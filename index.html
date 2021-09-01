@@ -17,41 +17,43 @@
   </head>
   <body>
     <header>
-      <h1>Pairvino</h1>
-      <h3>Your food and wine pairing resource!</h3>
+      <h1 id="pairvino">Pairvino</h1>
+      <h3 id="resource">...your food and wine pairing resource!</h3>
+      <form id="email-form">
+        <input type="text" name="email" placeholder="Email" id="email-entry" />
+        <input type="submit" placeholder="Submit email" id="submission" />
+      </form>
+    </header>
+    <main>
+      <h3 id="have-a-certain">
+        Have a certain dish in mind and want to find a wine that pairs well?
+      </h3>
+      <div id="animation">
+        <img src="https://iili.io/Rh2wTF.gif" alt="wine dripping in glass" />
+      </div>
       <div>
-        <form id="email-form">
+        <form id="dish-form">
           <input
             type="text"
-            name="email"
-            placeholder="Email"
-            id="email-entry"
+            name="dish"
+            placeholder="Enter food or dish"
+            id="wine-search"
           />
-          <input type="submit" placeholder="Submit email" id="submission" />
+          <input type="submit" placeholder="Get wine pairing" id="get-wine" />
         </form>
       </div>
-    </header>
-    <h3>
-      Have a certain dish in mind and want to find a wine that pairs well?
-    </h3>
-    <div id="animation">
-      <img src="https://iili.io/Rh2wTF.gif" alt="wine dripping in glass" />
-    </div>
-    <div>
-      <form id="dish-form">
-        <input
-          type="text"
-          name="dish"
-          placeholder="Enter food or dish"
-          id="wine-search"
-        />
-        <input type="submit" placeholder="Get wine pairing" id="get-wine" />
-      </form>
-    </div>
-    <div id="wine-data"></div>
-    <div id="choose-wine">...or choose your wine to get a dish pairing!</div>
-    <select id="dropdown"></select>
-    <!-- <div id='wine-image'>
-  </div> -->
+      <div id="wine-data"></div>
+    </main>
+    <aside>
+      <h3 id="choose-wine">...or choose your wine to get a dish pairing!</h3>
+      <select id="dropdown"></select>
+      <section id="food-data"></section>
+    </aside>
+    <footer>
+      <h3 id="thanks">
+        Thanks for visiting Pairvino!<br />Don't forget to join our wine of the
+        month club, here.
+      </h3>
+    </footer>
   </body>
 </html>

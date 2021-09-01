@@ -1,3 +1,44 @@
+const fetchWineData = async (foodParam) => {
+  try {
+    const wineCallUrl = `https://api.spoonacular.com/food/wine/pairing?apiKey=0f106abf85fb4610af9663136788962f&food=${foodParam}`;
+    const wineResponse = await axios.get(wineCallUrl);
+    const winePairInfo = wineResponse.data;
+    const winePairDescript = winePairInfo.pairingText;
+    // const wineImage = pairInfo.productMatches[0].imageUrl;
+    // console.log(wineImage);
+    renderWineData(winePairDescript);
+  } catch (error) {
+    console.error(error);
+  }
+};
+// fetchData('lamb');
+
+const renderWineData = (WinePairDescript) => {
+  const wineData = document.querySelector("#wine-data");
+
+  const pairDescriptEl = document.createElement("p");
+  pairDescriptEl.innerText = WinePairDescript;
+  wineData.append(pairDescriptEl);
+  // const wineImg = document.createElement('img');
+  // wineImg.src = wineImage;
+  // wineData.append(wineImg);
+};
+// fetchData(wineData.value);
+
+const submitHandler = (event) => {
+  event.preventDefault();
+  const wineData = document.querySelector("#wine-data");
+  const input = document.querySelector("#wine-search");
+  wineData.innerHTML = "";
+  fetchWineData(input.value);
+  input.value = "";
+};
+
+const getWine = document.querySelector("#dish-form");
+
+getWine.addEventListener("submit", submitHandler);
+
+//Get pairing dish app below
 const wineList = [
   "white_wine",
   "dry_white_wine",
@@ -109,72 +150,46 @@ const wineList = [
   "fruit_wine",
   "mead",
 ];
-
 // console.log(wineList);
 
+const foodData = document.querySelector("#food-data");
 const dropdownList = document.querySelector("#dropdown");
-
-const fetchWineData = async (foodParam) => {
-  try {
-    const wineCallUrl = `https://api.spoonacular.com/food/wine/pairing?apiKey=0f106abf85fb4610af9663136788962f&food=${foodParam}`;
-    const wineResponse = await axios.get(wineCallUrl);
-    const winePairInfo = wineResponse.data;
-    const winePairDescript = winePairInfo.pairingText;
-    // const wineImage = pairInfo.productMatches[0].imageUrl;
-    // console.log(wineImage);
-    renderWineData(winePairDescript);
-  } catch (error) {
-    console.error(error);
-  }
-};
-// fetchData('lamb');
-
-const wineListSelection = wineList;
-
-wineListSelection.forEach((wineChoice) => {
-  const dropdownChoice = document.createElement("option");
-
-  dropdownChoice.innerText = wineChoice;
-
-  dropdownList.append(dropdownChoice);
-});
 
 const fetchFoodData = async (wineParam) => {
   try {
     const foodCallUrl = `https://api.spoonacular.com/food/wine/dishes?apiKey=0f106abf85fb4610af9663136788962f&wine=${wineParam}`;
 
     const foodResponse = await axios.get(foodCallUrl);
-    const foodPairInfo = foodResponse.data;
-    const foodPairDescript = foodPairInfo.text;
-    // console.log(foodPairDescript);
+    const foodPairDescript = foodResponse.data.text;
+    renderFoodData(foodPairDescript);
   } catch (error) {
     console.error(error);
   }
 };
-// fetchFoodData('chianti');
+// fetchFoodData("chianti");
 
-const renderWineData = (WinePairDescript) => {
-  const wineData = document.querySelector("#wine-data");
+// const getWines =
 
+wineList.forEach((wine) => {
+  const dropdownChoice = document.createElement("option");
+  dropdownChoice.value = wine;
+  dropdownChoice.innerText = wine;
+  dropdownList.append(dropdownChoice);
+});
+
+const renderFoodData = (foodPairDescript) => {
+  const foodData = document.querySelector("#food-data");
   const pairDescriptEl = document.createElement("p");
-  pairDescriptEl.innerText = WinePairDescript;
-  wineData.append(pairDescriptEl);
-
-  // const wineImg = document.createElement('img');
-  // wineImg.src = wineImage;
-  // wineData.append(wineImg);
+  pairDescriptEl.innerText = foodPairDescript;
+  foodData.append(pairDescriptEl);
 };
-// fetchData(wineData.value);
 
-const submitHandler = (event) => {
+const wineChoiceHandler = (event) => {
   event.preventDefault();
-  const wineData = document.querySelector("#wine-data");
-  const input = document.querySelector("#wine-search");
-  wineData.innerHTML = "";
-  fetchWineData(input.value);
-  input.value = "";
+  const foodData = document.querySelector("#food-data");
+  const input = document.querySelector("option");
+  foodData.innerHTML = "";
+  fetchFoodData(input.value);
 };
 
-const getWine = document.querySelector("#dish-form");
-
-getWine.addEventListener("submit", submitHandler);
+dropdownList.addEventListener("change", wineChoiceHandler);
