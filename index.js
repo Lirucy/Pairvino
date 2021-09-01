@@ -1,43 +1,180 @@
+const wineList = [
+  "white_wine",
+  "dry_white_wine",
+  "assyrtiko",
+  "pinot_blanc",
+  "cortese",
+  "roussanne",
+  "moschofilero",
+  "muscadet",
+  "viognier",
+  "verdicchio",
+  "greco",
+  "marsanne",
+  "white_burgundy",
+  "chardonnay",
+  "gruener_veltliner",
+  "white_rioja",
+  "frascati",
+  "gavi",
+  "l_acadie_blanc",
+  "trebbiano",
+  "sauvignon_blanc",
+  "catarratto",
+  "albarino",
+  "arneis",
+  "verdejo",
+  "vermentino",
+  "soave",
+  "pinot_grigio",
+  "dry_riesling",
+  "torrontes",
+  "mueller_thurgau",
+  "grechetto",
+  "gewurztraminer",
+  "chenin_blanc",
+  "white_bordeaux",
+  "semillon",
+  "riesling",
+  "sauternes",
+  "sylvaner",
+  "lillet_blanc",
+  "red_wine",
+  "dry_red_wine",
+  "petite_sirah",
+  "zweigelt",
+  "baco_noir",
+  "bonarda",
+  "cabernet_franc",
+  "bairrada",
+  "barbera_wine",
+  "primitivo",
+  "pinot_noir",
+  "nebbiolo",
+  "dolcetto",
+  "tannat",
+  "negroamaro",
+  "red_burgundy",
+  "corvina",
+  "rioja",
+  "cotes_du_rhone",
+  "grenache",
+  "malbec",
+  "zinfandel",
+  "sangiovese",
+  "carignan",
+  "carmenere",
+  "cesanese",
+  "cabernet_sauvignon",
+  "aglianico",
+  "tempranillo",
+  "shiraz",
+  "mourvedre",
+  "merlot",
+  "nero_d_avola",
+  "bordeaux",
+  "marsala",
+  "port",
+  "gamay",
+  "dornfelder",
+  "concord_wine",
+  "sparkling_red_wine",
+  "pinotage",
+  "agiorgitiko",
+  "dessert_wine",
+  "pedro_ximenez",
+  "moscato",
+  "late_harvest",
+  "ice_wine",
+  "white_port",
+  "lambrusco_dolce",
+  "madeira",
+  "banyuls",
+  "vin_santo",
+  "port",
+  "rose_wine",
+  "sparkling_rose",
+  "sparkling_wine",
+  "cava",
+  "cremant",
+  "champagne",
+  "prosecco",
+  "spumante",
+  "sparkling_rose",
+  "sherry",
+  "cream_sherry",
+  "dry_sherry",
+  "vermouth",
+  "dry_vermouth",
+  "fruit_wine",
+  "mead",
+];
 
+// console.log(wineList);
 
-const fetchData = async (foodParam) => {
-    try {
-        const url = `https://api.spoonacular.com/food/wine/pairing?apiKey=0f106abf85fb4610af9663136788962f&food=${foodParam}`;
-        const response = await axios.get(url);
-        const pairInfo = response.data;
-        const pairDescript = pairInfo.pairingText;
-        const wineImage = pairInfo.productMatches[0].imageUrl;
-        // console.log(wineImage);
-        renderData(pairDescript, wineImage);
+const dropdownList = document.querySelector("#dropdown");
 
-    }catch (error) {
-        console.error(error);
-    }
-
-} 
+const fetchWineData = async (foodParam) => {
+  try {
+    const wineCallUrl = `https://api.spoonacular.com/food/wine/pairing?apiKey=0f106abf85fb4610af9663136788962f&food=${foodParam}`;
+    const wineResponse = await axios.get(wineCallUrl);
+    const winePairInfo = wineResponse.data;
+    const winePairDescript = winePairInfo.pairingText;
+    // const wineImage = pairInfo.productMatches[0].imageUrl;
+    // console.log(wineImage);
+    renderWineData(winePairDescript);
+  } catch (error) {
+    console.error(error);
+  }
+};
 // fetchData('lamb');
 
+const wineListSelection = wineList;
 
-const renderData = (pairDescript, wineImage) => {
+wineListSelection.forEach((wineChoice) => {
+  const dropdownChoice = document.createElement("option");
 
-    const wineData = document.querySelector('#wine-data');
+  dropdownChoice.innerText = wineChoice;
 
-    const pairDescriptEl = document.createElement('p');
-    pairDescriptEl.innerText = pairDescript;
-    wineData.append(pairDescriptEl);
+  dropdownList.append(dropdownChoice);
+});
 
-    const wineImg = document.createElement('img');
-    wineImg.src = wineImage;
-    wineData.append(wineImg);
-} 
+const fetchFoodData = async (wineParam) => {
+  try {
+    const foodCallUrl = `https://api.spoonacular.com/food/wine/dishes?apiKey=0f106abf85fb4610af9663136788962f&wine=${wineParam}`;
 
+    const foodResponse = await axios.get(foodCallUrl);
+    const foodPairInfo = foodResponse.data;
+    const foodPairDescript = foodPairInfo.text;
+    // console.log(foodPairDescript);
+  } catch (error) {
+    console.error(error);
+  }
+};
+// fetchFoodData('chianti');
+
+const renderWineData = (WinePairDescript) => {
+  const wineData = document.querySelector("#wine-data");
+
+  const pairDescriptEl = document.createElement("p");
+  pairDescriptEl.innerText = WinePairDescript;
+  wineData.append(pairDescriptEl);
+
+  // const wineImg = document.createElement('img');
+  // wineImg.src = wineImage;
+  // wineData.append(wineImg);
+};
+// fetchData(wineData.value);
 
 const submitHandler = (event) => {
-    event.preventDefault();
-    const inputValue = document.querySelector('#wine-search').value;
-    fetchData(inputValue);
-}
+  event.preventDefault();
+  const wineData = document.querySelector("#wine-data");
+  const input = document.querySelector("#wine-search");
+  wineData.innerHTML = "";
+  fetchWineData(input.value);
+  input.value = "";
+};
 
-const form = document.querySelector('form');
+const getWine = document.querySelector("#dish-form");
 
-form.addEventListener('submit', submitHandler);
+getWine.addEventListener("submit", submitHandler);

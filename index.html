@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pairvino</title>
-</head>
-<body>
-  <h1>Pairvino</h1>
-  <h3>Have a certain food or dish in mind, and want to find out a wine that might pair well?<br>...then you've come to the right spot!</h3>
-  <div> 
-    <form id='dish-form'>
-      <input
-        type='text'
-        name='dish'
-        placeholder='Enter your food or dish'
-        id='wine-search'
-      />
-      <input
-        type='submit'
-        placeholder='Get wine pairing'
-        id='wine-pairing'
-      />
-    </form>
-  </div>
-  <div id='wine-data'>
-  </div>
-  <div id='wine-image'>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Simonetta&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./index.js"></script>
-</body>
+    <script defer src="./index.js"></script>
+    <title>Pairvino</title>
+  </head>
+  <body>
+    <header>
+      <h1>Pairvino</h1>
+      <h3>Your food and wine pairing resource!</h3>
+      <div>
+        <form id="email-form">
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            id="email-entry"
+          />
+          <input type="submit" placeholder="Submit email" id="submission" />
+        </form>
+      </div>
+    </header>
+    <h3>
+      Have a certain dish in mind and want to find a wine that pairs well?
+    </h3>
+    <div id="animation">
+      <img src="https://iili.io/Rh2wTF.gif" alt="wine dripping in glass" />
+    </div>
+    <div>
+      <form id="dish-form">
+        <input
+          type="text"
+          name="dish"
+          placeholder="Enter food or dish"
+          id="wine-search"
+        />
+        <input type="submit" placeholder="Get wine pairing" id="get-wine" />
+      </form>
+    </div>
+    <div id="wine-data"></div>
+    <div id="choose-wine">...or choose your wine to get a dish pairing!</div>
+    <select id="dropdown"></select>
+    <!-- <div id='wine-image'>
+  </div> -->
+  </body>
 </html>

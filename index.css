@@ -1,0 +1,25 @@
+* {
+  font-family: "Simonetta", sans-serif;
+}
+#animation {
+  display: flex;
+  justify-content: center;
+}
+body {
+  background-image: url("https://iili.io/RXgCk7.md.jpg");
+  background-size: cover;
+  display: grid;
+  grid-template-rows: (1, 1fr);
+  width: ;
+}
+#dish-form {
+  display: flex;
+  position: relative;
+  top: -40px;
+  justify-content: center;
+}
+h1,
+h3 {
+  text-align: center;
+  color: rgb(102, 0, 51);
+}
