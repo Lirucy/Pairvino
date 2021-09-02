@@ -24,7 +24,7 @@ h3 {
   color: rgb(102, 0, 51);
 }
 h4 {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
   background-color: rgba(224, 220, 224, 0.9);
   border-radius: 6px;
@@ -75,16 +75,16 @@ main {
   outline: none;
   border-radius: 6px;
 }
+
 #dropdown:hover {
   box-shadow: inset 200px 0 0 0 rgb(238, 214, 238);
-  font-size: 17px;
   border: 2px solid rgb(102, 0, 51);
 }
 
 #email-form {
   display: inline-block;
   position: fixed;
-  right: 180px;
+  right: 150px;
   z-index: 1;
 }
 #food-data,
@@ -126,8 +126,10 @@ main {
 #email-entry:hover,
 #wine-search:hover {
   box-shadow: inset 135px 0 0 0 rgb(238, 214, 238);
-  font-size: 16px;
   border: 2px solid rgb(102, 0, 51);
+}
+#email-entry:hover {
+  font-size: 16px;
 }
 #submission,
 #get-wine {
@@ -140,8 +142,10 @@ main {
 #submission:hover,
 #get-wine:hover {
   box-shadow: inset 60px 0 0 0 rgb(238, 214, 238);
-  font-size: 16px;
   border: 2px solid rgb(102, 0, 51);
+}
+#submission:hover {
+  font-size: 16px;
 }
 
 @media screen and (max-width: 425px) {
