@@ -26,7 +26,12 @@ h3 {
 h4 {
   margin-top: 20px;
   margin-bottom: 10px;
+  background-color: rgba(224, 220, 224, 0.9);
+  border-radius: 6px;
+  height: 20px;
+  padding: 5px;
 }
+
 img {
   box-shadow: 5px 5px 5px rgb(165, 120, 165);
 }
@@ -59,18 +64,28 @@ main {
   position: relative;
   top: -40px;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 #dropdown {
   font-size: 16px;
   margin: 20px auto;
   width: 200px;
+  box-shadow: inset 0 0 0 0 rgb(238, 214, 238);
+  transition: ease-out 0.3s;
+  outline: none;
+  border-radius: 6px;
 }
+#dropdown:hover {
+  box-shadow: inset 200px 0 0 0 rgb(238, 214, 238);
+  font-size: 17px;
+  border: 2px solid rgb(102, 0, 51);
+}
+
 #email-form {
   display: inline-block;
   position: fixed;
   right: 180px;
-  margin-top: -10px;
+  z-index: 1;
 }
 #food-data,
 #wine-data {
@@ -79,6 +94,9 @@ main {
   font-weight: 600;
   font-size: 18px;
   text-align: center;
+}
+#food-data {
+  width: 500px;
 }
 #have-a-certain {
   text-align: center;
@@ -97,5 +115,52 @@ main {
 #thanks {
   margin: 10px auto 0;
 }
+#email-entry,
+#wine-search {
+  box-shadow: inset 0 0 0 0 rgb(238, 214, 238);
+  transition: ease-out 0.3s;
+  font-size: 14px;
+  outline: none;
+  border-radius: 6px;
+}
+#email-entry:hover,
+#wine-search:hover {
+  box-shadow: inset 135px 0 0 0 rgb(238, 214, 238);
+  font-size: 16px;
+  border: 2px solid rgb(102, 0, 51);
+}
+#submission,
+#get-wine {
+  box-shadow: inset 0 0 0 0 rgb(238, 214, 238);
+  transition: ease-out 0.3s;
+  font-size: 14px;
+  outline: none;
+  border-radius: 6px;
+}
+#submission:hover,
+#get-wine:hover {
+  box-shadow: inset 60px 0 0 0 rgb(238, 214, 238);
+  font-size: 16px;
+  border: 2px solid rgb(102, 0, 51);
+}
 
-@media screen and ();
+@media screen and (max-width: 425px) {
+  header {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 0.25fr 1.5fr 0.5fr;
+    grid-template-rows: 0.8fr 1fr;
+  }
+  #email-form {
+    display: inline-block;
+    position: fixed;
+    right: 10px;
+    z-index: 1;
+  }
+
+  #pairvino {
+    margin: 20px;
+  }
+  #wine-data {
+    width: 500px;
+  }
+}
