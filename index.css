@@ -1,7 +1,7 @@
 * {
   font-family: "Simonetta", sans-serif;
   color: rgb(102, 0, 51);
-  text-shadow: 1px 1px 1px rgb(209, 138, 209);
+  text-shadow: 2px 2px 2px rgb(209, 138, 209);
 }
 
 body {
@@ -9,72 +9,93 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-rows: 2fr 7fr 3fr 2fr;
+  grid-template-rows: 2fr 7fr 6fr 2fr;
   min-height: 600px;
   width: 100vw;
 }
 
 footer {
   margin: 0 auto;
+  text-align: center;
 }
 
 h3 {
   font-size: 25px;
-  text-align: center;
   color: rgb(102, 0, 51);
 }
-
+h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+img {
+  box-shadow: 5px 5px 5px rgb(165, 120, 165);
+}
 aside {
-  margin: 10px;
+  background-image: url("https://iili.io/RjuQSt.png");
+  background-repeat: no-repeat;
+  background-position: center;
   display: grid;
-  grid-template-columns: 3, repeat(1fr);
-  grid-template-rows: 3, repeat(1fr);
+  grid-template-rows: 1fr 1fr 3fr;
 }
 
 header {
-  margin: 10px;
   display: grid;
-  grid-template-columns: 5, repeat(1fr);
-  grid-template-rows: 2, repeat(1fr);
+  grid-template-columns: 0.5fr 3fr 0.25fr 1.5fr 0.5fr;
+  grid-template-rows: 1fr 0.5fr;
 }
 main {
-  margin: 0, auto;
+  display: grid;
+  grid-template-columns: ;
 }
 #animation {
   display: flex;
   justify-content: center;
+}
+#choose-wine {
+  margin: 0 auto;
 }
 #dish-form {
   display: flex;
   position: relative;
   top: -40px;
   justify-content: center;
+  margin: 0 auto;
 }
 #dropdown {
-  grid-column: 2/3;
-  grid-row: 2/3;
-  margin: 0, auto;
+  font-size: 16px;
+  margin: 20px auto;
   width: 200px;
 }
 #email-form {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  margin: 0 auto;
+  display: inline-block;
+  position: fixed;
+  right: 180px;
+  margin-top: -10px;
 }
 #food-data,
 #wine-data {
   margin: 0 auto;
   width: 600px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+#have-a-certain {
+  text-align: center;
 }
 #pairvino {
   font-size: 40px;
-  grid-column: 1/2;
-  margin: 0 auto;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin: 20px 0 0 140px;
 }
 #resource {
-  grid-column: 1/2;
+  grid-column: 2/3;
   grid-row: 2/3;
   margin: 0 auto;
 }
+#thanks {
+  margin: 10px auto 0;
+}
+
+@media screen and ();

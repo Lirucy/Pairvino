@@ -20,6 +20,7 @@
       <h1 id="pairvino">Pairvino</h1>
       <h3 id="resource">...your food and wine pairing resource!</h3>
       <form id="email-form">
+        <h4>Join our wine of the month club!</h4>
         <input
           type="text"
           name="email"
@@ -27,7 +28,12 @@
           id="email-entry"
           required
         />
-        <input type="submit" placeholder="Submit email" id="submission" />
+        <input
+          type="submit"
+          placeholder="Submit email"
+          id="submission"
+          alert="Thanks for being part of our Wine of the Month Club!"
+        />
       </form>
     </header>
     <main>
@@ -58,9 +64,14 @@
     </aside>
     <footer>
       <h3 id="thanks">
-        Thanks for visiting Pairvino!<br />Don't forget to join our wine of the
-        month club, here.
+        Thanks for visiting Pairvino.<br />Don't forget to join our wine of the
+        month club<br />to receive special offers!
       </h3>
     </footer>
+    <script>
+      $("#submission").on("submit", function () {
+        alert("Thanks for being part of our Wine of the Month Club!");
+      });
+    </script>
   </body>
 </html>
