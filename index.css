@@ -5,7 +5,13 @@
 }
 
 body {
-  background-image: url("https://iili.io/RjJC57.md.jpg");
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 70%,
+      rgba(143, 104, 125, 0.5) 88%,
+      rgba(75, 47, 47, 0.7) 100%
+    ),
+    url("https://iili.io/RjJC57.md.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
