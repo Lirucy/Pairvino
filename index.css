@@ -36,7 +36,8 @@ img {
   box-shadow: 5px 5px 5px rgb(165, 120, 165);
 }
 aside {
-  background-image: url("https://iili.io/RjuQSt.png");
+  /* background-image: url("https://iili.io/RjuQSt.png"); */
+  background-image: url("https://iili.io/RwAqTg.md.png");
   background-repeat: no-repeat;
   background-position: center;
   display: grid;
