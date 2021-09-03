@@ -4,14 +4,25 @@
   text-shadow: 2px 2px 2px rgb(209, 138, 209);
 }
 
-body {
+/* body {
   background-image: radial-gradient(
       circle,
       rgba(255, 255, 255, 0.1) 70%,
-      rgba(143, 104, 125, 0.5) 88%,
-      rgba(75, 47, 47, 0.7) 100%
+      rgba(173, 108, 144, 0.5) 88%,
+      rgba(116, 18, 98, 0.7) 100%
     ),
     url("https://iili.io/RjJC57.md.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: 2fr 7fr 6fr 2fr;
+  min-height: 600px;
+  width: 100vw;
+} */
+
+body {
+  background-image: 
+  /* radial-gradient(rgb(255, 255, 255), rgba(77, 22, 22, 0.4)), */ url("https://iili.io/RjJC57.md.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
